@@ -4,7 +4,7 @@
 
   <groupId>io.github.nestigogroup</groupId>
   <artifactId>jhttpclient-mutiny</artifactId>
-  <version>1.0</version>
+  <version>1.2.0</version>
   <packaging>jar</packaging>
 
   <name>jhttpclient-mutiny</name>
@@ -37,8 +37,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <jhttpclient.version>1.1.1</jhttpclient.version>
-    <mutiny.version>2.4.0</mutiny.version>
+    <jhttpclient.version>1.2.0</jhttpclient.version>
+    <mutiny.version>2.5.1</mutiny.version>
   </properties>
 
   <build>
