@@ -93,7 +93,7 @@ public class UniRestJsonClient {
      * @return Uni resolving to {@link MappedResponse object} containing the response code, response headers and the response body as deserialized POJO/Record
      * @throws RuntimeObjectMappingException if the deserialization fails
      */
-    public Uni<MappedResponse> get(String url, Class<?> outClass) {
+    public <T> Uni<MappedResponse<T>> get(String url, Class<T> outClass) {
         return Uni.createFrom().completionStage(asyncRestClient.get(url, outClass));
     }
 
@@ -104,7 +104,7 @@ public class UniRestJsonClient {
      * @return Uni resolving to {@link StringResponse object} containing the response code, response headers and the response body as deserialized POJO/Record
      * @throws RuntimeObjectMappingException if the serialization/deserialization fails
      */
-    public Uni<MappedResponse> post(String url, Class<?> outClass, String body) throws ObjectMappingException {
+    public <T> Uni<MappedResponse<T>> post(String url, Class<T> outClass, String body) throws ObjectMappingException {
         return Uni.createFrom().completionStage(asyncRestClient.post(url, outClass, body));
     }
 
@@ -115,7 +115,7 @@ public class UniRestJsonClient {
      * @return Uni resolving to {@link StringResponse object} containing the response code, response headers and the response body as deserialized POJO/Record
      * @throws RuntimeObjectMappingException if the serialization/deserialization fails
      */
-    public Uni<MappedResponse> put(String url, Class<?> outClass, String body) throws ObjectMappingException {
+    public <T> Uni<MappedResponse<T>> put(String url, Class<T> outClass, String body) throws ObjectMappingException {
         return Uni.createFrom().completionStage(asyncRestClient.put(url, outClass, body));
     }
 
@@ -126,7 +126,7 @@ public class UniRestJsonClient {
      * @return Uni resolving to {@link StringResponse object} containing the response code, response headers and the response body as deserialized POJO/Record
      * @throws RuntimeObjectMappingException if the serialization/deserialization fails
      */
-    public Uni<MappedResponse> patch(String url, Class<?> outClass, String body) throws ObjectMappingException {
+    public <T> Uni<MappedResponse<T>> patch(String url, Class<T> outClass, String body) throws ObjectMappingException {
         return Uni.createFrom().completionStage(asyncRestClient.patch(url, outClass, body));
     }
 
@@ -136,7 +136,7 @@ public class UniRestJsonClient {
      * @return Uni resolving to {@link MappedResponse object} containing the response code, response headers and the response body as deserialized POJO/Record
      * @throws RuntimeObjectMappingException if the deserialization fails
      */
-    public Uni<MappedResponse> delete(String url, Class<?> outClass) {
+    public <T> Uni<MappedResponse<T>> delete(String url, Class<T> outClass) {
         return Uni.createFrom().completionStage(asyncRestClient.delete(url, outClass));
     }
 
